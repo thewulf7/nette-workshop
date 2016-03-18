@@ -18,9 +18,15 @@ application:
 session:
 	expiration: 14 days
 
+extensions:
+    Console: Joseki\Console\DI\ConsoleExtension
 
 services:
 	- App\Model\UserManager
 	- App\Forms\FormFactory
 	- App\Forms\SignFormFactory
 	router: App\RouterFactory::createRouter
+
+Console:
+  commands:
+    - App\commands\GiiCommand
